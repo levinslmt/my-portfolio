@@ -32,7 +32,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="text-md font-semibold tracking-tight">
+        <Link href="#hero" className="text-md font-semibold tracking-tight">
           // levinjstn<span className="text-muted-foreground">.</span>
         </Link>
 

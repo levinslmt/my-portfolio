@@ -62,9 +62,7 @@ export function Contact() {
     <section id="contact" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            03 — Get in touch
-          </p>
+          
           <h2 className="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
             Let's build
             <br />

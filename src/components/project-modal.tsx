@@ -8,6 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  useCarousel,
 } from "@/components/ui/carousel";
 import {
   Dialog,
@@ -22,6 +23,31 @@ type Props = {
   project: Project | null;
   onClose: () => void;
 };
+
+function CarouselPagination() {
+  const { api, selectedIndex, count } = useCarousel();
+
+  if (count <= 1) return null;
+
+  return (
+    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5">
+      <div className="flex items-center gap-1.5">
+        {Array.from({ length: count }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => api?.scrollTo(i)}
+            className={`rounded-full transition-all ${
+              i === selectedIndex
+                ? "w-4 h-1.5 bg-white"
+                : "w-1.5 h-1.5 bg-white/50 hover:bg-white/80"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function ProjectModal({ project, onClose }: Props) {
   // Lock body scroll when open
@@ -62,6 +88,7 @@ export function ProjectModal({ project, onClose }: Props) {
               </CarouselContent>
               <CarouselPrevious className="left-3 h-9 w-9" />
               <CarouselNext className="right-3 h-9 w-9" />
+              <CarouselPagination />
             </Carousel>
 
             <div className="flex flex-col gap-5 p-6 sm:p-8">

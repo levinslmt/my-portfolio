@@ -63,25 +63,27 @@ export const projects: Project[] = [
   {
     id: "CampusCash",
     title: "Campus Cash",
-    description: "A full-stack e-commerce platform with Stripe checkout and admin dashboard.",
+    description: "Personal budgeting and expense tracking for students.",
     longDescription:
-      "Atlas Commerce is a modern e-commerce platform built with Next.js and Stripe. It features server-side rendering, optimistic UI updates, an admin dashboard for inventory, and a fully typed API layer.",
-    tags: ["Next.js", "TypeScript", "Stripe", "Prisma"],
+      "CampusCash helps students manage their money with a daily safe-to-spend calculator, expense tracking, category budgets, and savings goals. Log transactions, see what your purchases are really worth in labor hours, and stay on top of your finances.",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "JWT"],
     liveUrl: "https://campus-cash-mu.vercel.app",
     repoUrl: "https://github.com/levinslmt/campus-cash",
     images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=80",
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=1600&q=80",
+      "/CampusCash/CampusCash-Landing.png",
+      "/CampusCash/CampusCash-SignIn.png",
+      "/CampusCash/CampusCash-Dashboard.png",
+      "/CampusCash/CampusCash-Expenses.png",
+      "/CampusCash/CampusCash-Goals.png",
     ],
   },
   {
     id: "PantryPal",
     title: "Pantry Pal",
-    description: "Real-time analytics dashboard with live charts and team collaboration.",
+    description: "AI-powered recipe generator that turns your ingredients into meals.",
     longDescription:
-      "Pulse is a real-time analytics dashboard that visualizes event streams with WebSockets. It supports custom dashboards, team workspaces, and exportable reports.",
-    tags: ["React", "Node.js", "PostgreSQL", "WebSockets"],
+      "PantryPal uses AI to generate custom recipes from whatever ingredients you have on hand. Just list what's in your fridge or pantry, and get tailored recipes in seconds. Save your favorites and revisit them anytime.",
+    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "Redis", "Auth.js", "Prisma", "PostgreSQL"],
     liveUrl: "https://pantry-pal-bay.vercel.app",
     repoUrl: "https://github.com/levinslmt/pantry-pal",
     images: [

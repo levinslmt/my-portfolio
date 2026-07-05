@@ -11,6 +11,9 @@ import {
   SiMongodb,
   SiPrisma,
   SiGit,
+  SiPostman,
+  SiFigma,
+  SiGithub,
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
 import type { IconType } from "react-icons";
@@ -34,10 +37,13 @@ export const techStack: Tech[] = [
   { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E", category: "Backend" },
   { name: "Express", icon: SiExpress, color: "#000000", colorDark: "#E0E0E0", category: "Backend" },
   { name: "Python", icon: SiPython, color: "#3776AB", category: "Backend" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", category: "Backend" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248", category: "Backend" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", category: "Backend" },
   { name: "Prisma", icon: SiPrisma, color: "#2D3748", category: "Backend" },
+  { name: "Postman", icon: SiPostman, color: "#FF6C37", category: "Tools" },
   { name: "Git", icon: SiGit, color: "#F05032", category: "Tools" },
+  { name: "GitHub", icon: SiGithub, color: "#181717", colorDark: "#E0E0E0", category: "Tools" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E", category: "Tools" },
   { name: "VS Code", icon: DiVisualstudio, color: "#007ACC", category: "Tools" },
 ];
 

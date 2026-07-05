@@ -52,9 +52,9 @@ export function TechStack() {
               className="flex flex-col items-center gap-3 p-4" // Removed hover effects and transitions
             >
               <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-background">
-                <tech.icon className="h-8 w-8" style={{ color: isDark && tech.colorDark ? tech.colorDark : tech.color }} />
+                <tech.icon className="h-10 w-10" style={{ color: isDark && tech.colorDark ? tech.colorDark : tech.color }} />
               </div>
-              <span className="text-xs font-medium text-muted-foreground">
+              <span className="text-xs font-semibold">
                 {tech.name}
               </span>
             </div>

@@ -30,7 +30,7 @@ export function Hero() {
             </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-md px-4">
-            <a href="#projects">View projects</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           </Button>
         </div>
 

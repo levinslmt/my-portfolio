@@ -66,7 +66,7 @@ export const projects: Project[] = [
     description: "Personal budgeting and expense tracking for students.",
     longDescription:
       "CampusCash helps students manage their money with a daily safe-to-spend calculator, expense tracking, category budgets, and savings goals. Log transactions, see what your purchases are really worth in labor hours, and stay on top of your finances.",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "JWT"],
+    tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "JWT"],
     liveUrl: "https://campus-cash-mu.vercel.app",
     repoUrl: "https://github.com/levinslmt/campus-cash",
     images: [
@@ -83,31 +83,31 @@ export const projects: Project[] = [
     description: "AI-powered recipe generator that turns your ingredients into meals.",
     longDescription:
       "PantryPal uses AI to generate custom recipes from whatever ingredients you have on hand. Just list what's in your fridge or pantry, and get tailored recipes in seconds. Save your favorites and revisit them anytime.",
-    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "Redis", "Auth.js", "Prisma", "PostgreSQL"],
+    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "Redis", "NextAuth.js", "Prisma", "PostgreSQL"],
     liveUrl: "https://pantry-pal-bay.vercel.app",
     repoUrl: "https://github.com/levinslmt/pantry-pal",
     images: [
-      "/pantry-pal/PantryPal-LandingPage.png",
-      "/pantry-pal/PantryPal-Dashboard.png",
-      "/pantry-pal/PantryPal-SigninPage.png",
-      "/pantry-pal/PantryPal-SignupPage.png",
-      "/pantry-pal/PantryPal-SavedRecipe.png",
-      "/pantry-pal/PantryPal-SavedPDF.png",
+      "/PantryPal/PantryPal-Landing.png",
+      "/PantryPal/PantryPal-Signin.png",
+      "/PantryPal/PantryPal-Dashboard.png",
+      "/PantryPal/PantryPal-SavedPDF.png",
+      "/PantryPal/PantryPal-Saved-Recipe.png",
     ],
   },
   {
     id: "Whisper",
     title: "Whisper",
-    description: "A minimal markdown blog with MDX, full-text search, and RSS.",
+    description: "AI-powered mental health companion with chat, mood tracking, and guided breathing exercises.",
     longDescription:
-      "Inkwell is a statically generated blog engine powered by MDX. It ships with full-text search, syntax highlighting, RSS, and a clean reading experience.",
-    tags: ["Next.js", "Tailwind", "MDX", "MongoDB"],
+      "Whisper is an AI-powered mental health companion built with Next.js. It combines a chat experience powered by Google Gemini 2.5 Flash with mood tracking, guided breathing exercises, and crisis-support resources — all in a single interface. Features include crisis detection with Philippines-specific hotlines, multiple chat sessions, dark mode, and PDF export.",
+    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "NextAuth.js", "Prisma", "PostgreSQL"],
     liveUrl: "https://whisper-chi-five.vercel.app",
     repoUrl: "https://github.com/levinslmt/whisper",
     images: [
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80",
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600&q=80",
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=80",
+      "/Whisper/Whisper-Dashboard.png",
+      "/Whisper/Whisper-SignIn.png",
+      "/Whisper/Whisper-Chat.png",
+      "/Whisper/Whisper-Support.png",
     ],
   },
 ];

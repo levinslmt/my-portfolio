@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Loader2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -61,19 +63,33 @@ export function Contact() {
   return (
     <section id="contact" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="max-w-3xl">
-          
-          <h2 className="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            Let's build
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-3xl"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-6xl"
+          >
+            Let&apos;s build
             <br />
             <span className="text-muted-foreground">something together.</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-muted-foreground">
-            I'm currently open to freelance projects and full-time roles.
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 max-w-xl text-muted-foreground"
+          >
+            I&apos;m currently open to freelance projects and full-time roles.
             Whether you have a question or just want to say hi — my inbox is always open.
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <motion.div
+            variants={fadeInUp}
+            className="mt-10 flex flex-wrap gap-3"
+          >
             <Button asChild size="lg" className="rounded-md px-6">
               <a href="mailto:levinjustin.salamat@gmail.com">
                 <Mail className="mr-2 h-4 w-4" />
@@ -85,12 +101,18 @@ export function Contact() {
                 Download CV <ArrowUpRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-20 max-w-3xl">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-20 max-w-3xl"
+        >
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <motion.div variants={fadeInUp} className="grid gap-4 sm:grid-cols-2">
               <Input
                 type="text"
                 placeholder="Name"
@@ -107,22 +129,26 @@ export function Contact() {
                 disabled={status === "loading"}
                 className="h-12 rounded-lg border-border bg-background px-4 text-sm"
               />
-            </div>
-            <Input
-              type="text"
-              placeholder="Subject"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              disabled={status === "loading"}
-              className="h-12 rounded-lg border-border bg-background px-4 text-sm"
-            />
-            <Textarea
-              placeholder="Tell me about your project..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              disabled={status === "loading"}
-              className="min-h-[160px] resize-none rounded-lg border-border bg-background px-4 py-3 text-sm"
-            />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Input
+                type="text"
+                placeholder="Subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                disabled={status === "loading"}
+                className="h-12 rounded-lg border-border bg-background px-4 text-sm"
+              />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Textarea
+                placeholder="Tell me about your project..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                disabled={status === "loading"}
+                className="min-h-[160px] resize-none rounded-lg border-border bg-background px-4 py-3 text-sm"
+              />
+            </motion.div>
 
             {status === "error" && (
               <p className="text-sm text-destructive">{errorMessage}</p>
@@ -130,27 +156,29 @@ export function Contact() {
 
             {status === "success" && (
               <p className="text-sm text-green-600 dark:text-green-400">
-                Message sent! I'll get back to you soon.
+                Message sent! I&apos;ll get back to you soon.
               </p>
             )}
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={status === "loading"}
-              className="w-full rounded-lg bg-foreground py-6 text-sm font-medium text-background hover:bg-foreground/90 disabled:opacity-50"
-            >
-              {status === "loading" ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                "Send message"
-              )}
-            </Button>
+            <motion.div variants={fadeInUp}>
+              <Button
+                type="submit"
+                size="lg"
+                disabled={status === "loading"}
+                className="w-full rounded-lg bg-foreground py-6 text-sm font-medium text-background hover:bg-foreground/90 disabled:opacity-50"
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send message"
+                )}
+              </Button>
+            </motion.div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

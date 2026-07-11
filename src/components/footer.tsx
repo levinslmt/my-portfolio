@@ -1,9 +1,19 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { fadeIn } from "@/lib/animations";
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border">
+    <motion.footer
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="border-t border-border"
+    >
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-10 md:flex-row md:items-center">
         <div className="text-sm text-muted-foreground">
           © {year} levinjstn. Designed & built with care.
@@ -23,6 +33,6 @@ export function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

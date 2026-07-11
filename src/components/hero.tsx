@@ -1,40 +1,64 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FiArrowDownRight, FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6 pt-24 pb-32 md:pt-36 md:pb-40">
-        <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <motion.div
+        className="mx-auto max-w-6xl px-6 pt-24 pb-32 md:pt-36 md:pb-40"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          variants={fadeInUp}
+          className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground"
+        >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-foreground" />
           Available for work · July 2026
-        </div>
+        </motion.div>
 
-        <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-          Hi, Levin here  
+        <motion.h1
+          variants={fadeInUp}
+          className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl"
+        >
+          Hi, Levin here
           <br />
           <span className="text-muted-foreground">I build things for the web</span>
-        </h1>
+        </motion.h1>
 
-        <p className="mt-8 max-w-xl text-base text-muted-foreground md:text-lg">
+        <motion.p
+          variants={fadeInUp}
+          className="mt-8 max-w-xl text-base text-muted-foreground md:text-lg"
+        >
           Full-stack developer focused on crafting clean, performant, and accessible
           digital experiences. I turn complex problems into simple, elegant interfaces.
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3">
+        <motion.div
+          variants={fadeInUp}
+          className="mt-10 flex flex-wrap items-center gap-3"
+        >
           <Button asChild size="lg" className="rounded-md px-4">
             <a href="#contact">
-              Let's work together
+              Let&apos;s work together
                <FiArrowDownRight className="ml-1 h-4 w-4" />
             </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-md px-4">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="mt-14 flex items-center gap-5 text-muted-foreground">
+        <motion.div
+          variants={fadeInUp}
+          className="mt-14 flex items-center gap-5 text-muted-foreground"
+        >
           <a href="https://github.com/levinslmt" target="_blank" rel="noreferrer" aria-label="GitHub"
              className="transition hover:text-foreground">
              <FaGithub className="h-5 w-5" />
@@ -47,8 +71,8 @@ export function Hero() {
              className="transition hover:text-foreground">
              <FiMail className="h-5 w-5" />
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* subtle grid background */}
       <div

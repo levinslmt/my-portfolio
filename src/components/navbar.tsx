@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./theme-toggle";
+import { slideDown } from "@/lib/animations";
 
 const links = [
   { href: "#projects", label: "Projects" },
@@ -64,22 +66,30 @@ export function Navbar() {
         </div>
       </div>
 
-      {open && (
-        <div className="border-t border-border md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition hover:text-foreground"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={slideDown}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="border-t border-border md:hidden overflow-hidden"
+          >
+            <nav className="mx-auto flex max-w-6xl flex-col px-6 py-4">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-2 py-3 text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

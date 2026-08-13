@@ -97,7 +97,7 @@ export const projects: Project[] = [
   {
     id: "Whisper",
     title: "Whisper",
-    description: "AI-powered mental health companion with chat, mood tracking, and guided breathing exercises.",
+    description: "AI-powered mental health companion with chat and mood tracking.",
     longDescription:
       "Whisper is an AI-powered mental health companion built with Next.js. It combines a chat experience powered by Google Gemini 2.5 Flash with mood tracking, guided breathing exercises, and crisis-support resources — all in a single interface. Features include crisis detection with Philippines-specific hotlines, multiple chat sessions, dark mode, and PDF export.",
     tags: ["Next.js", "TypeScript", "Vercel AI SDK", "NextAuth.js", "Prisma", "PostgreSQL"],

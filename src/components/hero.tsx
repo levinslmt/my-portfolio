@@ -20,7 +20,7 @@ export function Hero() {
           className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground"
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-foreground" />
-          Available for work · August 2026
+          Available for work · September 2026
         </motion.div>
 
         <motion.h1
